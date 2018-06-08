@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>fullPage</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<!-- 导入轮播插件库 -->
+<script src="js/jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<link href="css/zzsc.css" rel="stylesheet" type="text/css"/>
+<script src='js/zzsc.js' type="text/javascript"></script>
+	<script type="text/javascript" src='js/unslider.min.js'></script>
+	<link rel="stylesheet" href="css/style1.css">
+
+
+<style>
+	*{margin: 0; padding: 0; font-family:微软雅黑;}
+	#fp-nav ul li a span{background: white; border: 1px solid white; width: 10px; height: 10px;}
+    #fp-nav ul li a.active span{background: gray;border: 1px solid gray;}
+    /*头部设置*/
+	.menu_top{background-color:rgba(0,0,0,0.3); height: 58px;position: fixed;margin: 0; padding: 0; width: 100%; z-index: 70;}
+	.menu_top .menu_left{ line-height: 55px; font-size: 25px; color: #A7E615; width: 250px; float: left; margin-left: 130px;}
+	.menu_top #menu {  float: right; margin-right:50px;}
+	.menu_top #menu li { float: left; margin:  0 10px 0 0; font-size: 14px; list-style-type: none;}
+	.menu_top #menu a { float: left; padding: 20px 20px;  color: #fff; text-decoration: none;}
+	.menu_top #menu .active a { color: #fff; background-color: #0F698A;}	
+	
+	.section1 { background: url(images/bg1.jpg) 50%; background-size:1920px 1200px;}
+	.section2 {  background: url(images/b2.jpg) 50%;background-size:1920px 1200px;   }
+	.section2 .sec{background-color:rgba(0,0,0,0.6);}
+	.section3 { background: url(images/b7.jpg) 50%;background-size:1920px 1200px; }
+	.section3 .sec1{background-color:rgba(0,0,0,0.4);}
+	.section4 { background: url(images/b5.jpg) 50% ;background-size:1920px 1200px;}
+	.section5 { background: url(images/b3.jpg) 50% ;background-size:1920px 1200px;}
+	.section6 { background: url(images/b6.jpg) 50% ;background-size:1920px 1200px;}
+	.section6 .dialog{position: absolute;width: 400px; height: 200px; background: rgb(255,255,255); color: black; }
+	.section6 .d1 span { width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 40px solid rgb(255,255,255); position: absolute;bottom: -40px; left: 45%; }
+	.section6 .d2 span{ width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-bottom: 40px solid rgb(255,255,255);position: absolute;top: -40px; left: 45%;} 
+	.section6 .tio1{left: 455px; top: 145px;opacity: 0;}
+ 	.section6 .tio2{left: 1045px;top: 145px;opacity: 0;}
+	.section6 .tio3{left: 165px; top: 700px;opacity: 0;}
+	.section6 .tio4{left: 753px; top: 700px;opacity: 0;}	 
+	.section6 .tio5{left: 1340px; top: 700px;opacity: 0;} 
+	.section6 img{position: absolute;left: -1350px; top: 40%;}
+ 	.section { text-align: center; font: 50px ; color: #fff;}
+ 	/*section1*/
+
+ 	.section1 h3{color: #0B9273;text-shadow: 5px -2px 8px #151414;margin-top: -200px;position: relative;top: -400px;}
+ 	.section1 h3 span{color: #B6BF31; font-weight: 300;}
+ 	.section1 p small{ position: relative;font-size: 90px; display: none;}
+	.section1 .jsh{position: absolute; bottom: 150px; right: 250px; font-size: 30px; color:red;text-shadow:5px -2px 8px #151414; font-family: KaiTi; display: none;}
+	.section1 .jsh1{ bottom: 100px; }
+	.section1 .section1_img{width: 60px; height: 60px; position: absolute; bottom: 150px; opacity: 0.7; }
+	.section1 .section1_img:hover{cursor: pointer;}
+	/*section2*/
+	.section2 .imga{width:900px; height: 600px; margin:0 auto; }
+	.section2 .imga .imga_a{width:350px; height:250px;float: left;position: relative;top: 30px; margin: 20px;left: 60px;}
+	.section2 .imga .imga_a .imgg{  border-radius: 60%; background-color:rgba(0,0,0,0.6); display: none; }	
+	.section2 .imga img{text-align: center; margin-top: 30px; }
+	.section2 .imga p{font-size: 30px;}
+	.section2 .section2_jb{ bottom:50px; left: 45%; }
+	.section2 .imga .imga_a .imga_left_top{position: absolute; left: -900px;top:40px;}
+	.section2 .imga .imga_a .imga_left_bottom{position: absolute; left: -900px;bottom: 0;}
+	.section2 .imga .imga_a .imga_right_top{position: absolute; right:-900px;top: 40px;}
+	.section2 .imga .imga_a .imga_right_bottom{position: absolute; right:-900px;bottom: 0;}
+	.section2 .imga .imga_a .imgb p{font-size: 18px;width: 300px;}
+	/*section4*/
+	.section4 .intro{width: 1200px; height: 462px; position: relative; left: 300px; top: -100px;
+	 background: rgba(192,192,192,0.3); }
+	.section4 .intro .intro_k{ font-size: 16px; color: black; text-align: left;font-weight:400; width: 1112px; height: 150px; }
+	.section4 .intro .intro_k h1{font-weight: 500; font-size: 22px; margin-bottom: 10px;}
+	.section4 .intro .intro_k .phng{float: left;height: 130px; margin-right: 10px;}
+	.section4 .intro .intro_k .phn{width: 40px; height: 40px;}
+	.section4 .com{position: absolute;}
+	.section4 .com .com_a{width: 541px; height: 385px;}
+	.section4 .com .com_b{width: 309px; height: 237px;/* width: 0;height: 0; */display: none;}
+	.section4 .com_1{ /*bottom: 50px;*/bottom: -400px; right: 200px;opacity: 0.6; display: none;}
+	.section4 .com_2{bottom: 181px;right: 211px;} 
+	.section4 .intro .intro_a{position: absolute;top: 20px;left: -1620px; }
+	.section4 .intro .intro_b{position: absolute;top: 200px;left: 1620px; }
+	.section4 .intro .intro_c{position: absolute;top: -840px; left: 10px;display: none;}
+	ul, ol { padding: 0;}
+	.banner { position: relative; overflow: auto; text-align: center; margin:0 auto; width: 1200px }
+	.banner li { list-style: none; }
+	.banner ul li { float: left; }
+	#b04 { width: 640px;}
+	#b04 .dots { position: absolute; left: 0; right: 0; bottom: 20px;}
+	#b04 .dots li { display: inline-block; width: 10px; height: 10px; margin: 0 4px; text-indent: -999em; border: 2px solid #fff; border-radius: 6px; cursor: pointer; opacity: .4; -webkit-transition: background .5s, opacity .5s; -moz-transition:background .5s, opacity .5s; transition: background .5s, opacity .5s;}
+	#b04 .dots li.active {background: #fff;opacity: 1;}
+	#b04 .arrow { position: absolute; top: 300px;}
+	#b04 #al { left: 15px;}
+	#b04 #ar { right: 15px;}
+</style>
+<style>
+    * {
+      margin: 0; padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #container {
+      overflow: hidden;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+    }
+
+    #background_video {
+      position: absolute;
+
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+
+      object-fit: cover;
+      height: 100%; width: 100%;
+    }
+
+    #video_cover {
+      position: absolute;
+
+      width: 100%; height: 100%;
+
+      background: url('video_cover.jpeg') no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    #video_controls {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    #play img {
+      width: 100px;
+    }
+    #pause img {
+      width: 90px;
+    }
+    #pause {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      #video_controls {
+        display: none;
+      }
+    }
+
+    /* Demo page specific styles */
+
+    body {
+      text-align: center;
+      font-family: 'proxima-nova', Helvetica;
+    }
+
+    #container {
+      height: 100%;
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0; right: 0; left: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+
+    #main_content {
+      z-index: 2;
+      position: relative;
+      display: inline-block;
+
+      /* Vertical center */
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #main_content h1 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: 'proxima-nova-condensed', Helvetica;
+      color: #fff;
+      font-size: 35px;
+    }
+
+    #main_content .sub_head {
+      color: rgba(255,255,255,0.5);
+      font-size: 18px;
+    }
+
+    #main_content .info {
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    #links {
+      margin-top: 50px;
+    }
+
+    #links a {
+      border: 2px solid rgba(255,255,255,0.20);
+      border-radius: 61px;
+      font-size: 12px;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 10px 25px;
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    #footer {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+    }
+    #footer a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      margin: 10px;
+      font-size: 12px;
+    }
+    #footer a:first-child {
+      float: left;
+    }
+    #footer a:last-child {
+      float: right;
+    }
+  </style>
+<script>
+$(function(){
+	//默认首页动画效果
+	$('.section1,p').find('small').delay(500).fadeIn('fast').animate({
+		'font-size':'20px'
+		},1000,'easeOutExpo',function(){
+			$(this).animate({
+					'font-size':'40px',
+					'opacity':'1'
+				},500,function(){
+					$('.section1,p').find('h3').animate({
+					'top':'0'
+				},1000,'easeOutExpo');					
+				})		
+		});
+	//名字日期出现
+		$('.jsh').slideDown(3000);
+		//展开图片出
+
+
+		setInterval(function(){
+			 $('.section1_img').animate({
+			'bottom':'140px'
+		},200,function(){
+			$(this).animate({
+				'bottom':'150px'
+			},200,function(){
+				$(this).animate({
+					'bottom':'140px'
+				},200,function(){
+					$(this).animate({
+						'bottom':'150px'
+					},200);
+				});
+			});
+		});
+			},1400);
+
+	$('#dowebok').fullpage({
+		
+		anchors: ['page1', 'page2', 'page3', 'page4','page5','page6'],
+		menu: '#menu',
+		'navigation': true,
+		loopBottom: true,		
+		//滚动到某一屏的回调函数
+		afterLoad: function(anchorLink, index){
+			// console.log(anchorLink,index);
+			if(index==1){
+				//第一页动画效果
+				$('.section1,p').find('small').delay(500).fadeIn('fast').animate({
+					'font-size':'20px'
+					},1000,'easeOutExpo',function(){
+					$(this).animate({
+						'font-size':'40px'
+					},500,function(){
+						$('.section1,p').find('h3').animate({
+						'top':'0'
+					},1000,'easeOutExpo');					
+					})		
+				});	
+				$('.jsh').slideDown(3000);				
+			}
+			// index==1
+
+
+			if(index == 2){
+				//控制四张图片进入
+				$('.section2 .imgg1').delay(200).fadeIn(function(){
+					$('.section2 .imgg2').delay(200).fadeIn(function(){
+						$('.section2 .imgg4').delay(200).fadeIn(function(){
+							$('.section2 .imgg3').delay(200).fadeIn();
+						})
+					})
+				});
+				//控制四方文字动画进入
+				$('.imga_left_top').delay(200).animate({
+					'left':'-400px'
+				},1000,'easeOutExpo');
+
+				$('.imga_right_top').delay(800).animate({
+						'right':'-400px'
+					},1000,'easeOutExpo');
+				$('.imga_right_bottom').delay(1400).animate({
+						'right':'-300px',
+						'bottom':'80px'
+					},1000,'easeOutExpo');
+				$('.imga_left_bottom').delay(2000).animate({
+						'bottom':'80px',
+						'left':'-300px'
+					},1000,'easeOutExpo');									
+			}
+			// index==2
+
+			if(index==4){
+				//第一个div中的字体
+				$('.intro_a').animate({
+					'left':'30px'
+				},1000,'easeOutExpo',function(){
+					$(this).animate({
+						'left':'-10px'
+					},500,'easeOutExpo',function(){
+						$(this).animate({
+							'left':'10px'
+						})
+					})
+				});
+
+				//第二个div中的字体
+				$('.intro_b').delay(1000).animate({
+					'left':'-40px'
+				},1000,'easeOutExpo',function(){
+					$(this).animate({
+						'left':'10px'
+					},500)
+				});
+				//第三个div中的字体
+				$('.intro_c').delay(1500).fadeIn('fast',function(){
+					$(this).animate({
+					'top':'360px'
+				},1000,'easeOutExpo',function(){
+					$(this).animate({
+						'top':'320px'
+					},500,'easeOutExpo',function(){
+						$(this).animate({
+							'top':'340'
+						});
+					})
+				});	
+
+				})
+				//电脑屏幕点亮
+				$('.com_1').delay(500).fadeIn('fast',function(){
+					$(this).animate({
+					'bottom':'50px'
+				},1000,'easeOutExpo',function(){
+					$('.com_b').fadeIn(500,function(){
+						$('.com_2').animate({
+							'bottom': '280px',
+							'right': '350px'
+						},1000)
+					})
+				});	
+
+				})
+				$('#tagscloud').fadeIn(2000);						
+			}
+			// index==4
+			if(index==5){
+				$('.qd').animate({
+					'left':'42%'
+				},1000);
+			}
+			//index==6
+			if(index==6){
+				$('.section6 .lc').animate({'opacity':1},2000)
+				$('.section6').find('img').animate({
+					'left':'350px'
+				},1000,function(){
+					$('.section6 .d1').animate({'top':'245px','opacity':1},1000);
+					$('.section6 .d2').animate({'top':'600px','opacity':1},1000);
+				});
+			}
+		},
+		onLeave: function(index,nextIndex, direction){
+			// console.log(index,direction);
+			//轮播到第一张的动画效果
+			if(index==1){
+				$('.section1').find('small').stop(true).fadeOut('fast').animate({
+					'font-size':'90px'
+				},1000,'easeOutExpo',function(){
+					$('.section1,p').find('h3').stop(true).animate({
+						'top':'-400px'
+					},'fast','easeOutExpo');
+				});
+						$('.jsh').stop(true).slideUp();			
+			}
+			// index==1
+
+			if(index==2){
+				//控制四张图片动画移出
+				$('.section2 .imgg1').stop(true).fadeOut(function(){
+					$('.section2 .imgg2').stop(true).fadeOut(function(){
+						$('.section2 .imgg4').stop(true).fadeOut(function(){
+							$('.section2 .imgg3').stop(true).fadeOut();
+						})
+					})
+				});
+
+				//控制四面文字动画移出
+				$('.imga_left_top').stop(true).animate({
+					'left':'-900px',
+					'top':'90px'
+				},200,'easeOutExpo');
+
+				$('.imga_right_top').stop(true).animate({
+						'right':'-900px',
+						'top':'90px'
+					},200,'easeOutExpo');
+				$('.imga_right_bottom').stop(true).animate({
+						'right':'-900px',
+						'bottom':'0px'
+					},200,'easeOutExpo');
+				$('.imga_left_bottom').stop(true).animate({
+						'bottom':'0px',
+						'left':'-900px'
+					},200,'easeOutExpo');		
+			}
+			// if(index==2)	
+		
+
+//
+			if(index==4){
+
+				//第一个div中的字体
+				$('.intro_a').stop(true).animate({
+					'left':'-1620px'
+				},200,'easeOutExpo');
+				//第二个div中的字体
+				$('.intro_b').stop(true).animate({
+					'left':'1620px'
+				},200,'easeOutExpo');
+				//第三个div中的字体
+				$('.intro_c').stop(true).fadeOut(0,function(){
+					$(this).animate({
+					'top':'-840px'
+				},200,'easeOutExpo');
+				})
+
+				//电脑屏幕点亮
+				$('.com_1').stop(true).delay(500).fadeOut('fast',function(){
+					$(this).animate({
+					'bottom':'-400px'
+				},1000,'easeOutExpo',function(){
+					$('.com_b').fadeOut(200,function(){
+						$('.com_2').animate({
+							'bottom': '181px',
+							'right': '211px'
+						},200);
+					})
+				});				
+				})	
+				$('#tagscloud').stop(true).fadeOut(0);		
+			}
+		         
+		         // index==4
+		         if(index==5){
+		         	$('.qd').stop(true).animate({
+		         		'left':'120%'
+		         	},500,function(){
+		         		$(this).animate({
+		         			'left':'-20%'
+		         		},10);
+		         	});
+		         }	
+
+		         			//index==6
+			if(index==6){
+				$('.section6 .lc').stop(true).animate({'opacity':0},100)
+				$('.section6').stop(true).find('img').animate({
+					'left':'1350px'
+				},100,function(){
+					$('.section6').find('img').animate({'left':'-1350px'},100);
+					$('.section6 .d1').animate({'top':'145px','opacity':0},100);
+					$('.section6 .d2').animate({'top':'700px','opacity':0},100);
+				});
+			}
+
+
+			}
+	});
+
+	/*	setInterval(function(){
+	        $.fn.fullpage.moveSlideRight();
+	    }, 3000);*/
+	//定时导航栏左上
+ 	setInterval(function(){
+       $('.menu_left').animate({
+       	'opacity':'0.5'
+       },1500,'easeOutExpo',function(){
+       	$(this).animate({
+       		'opacity':'1'
+       	},1500);
+       });
+
+    },3000);   
+});
+
+</script>
+</head>
+
+<body>
+<div class="menu_top">
+	<div class="menu_left" style="opacity:1">individual resume</div>
+	<ul id="menu">
+		<li data-menuanchor="page1" class="active"><a href="#page1">首页</a></li>
+		<li data-menuanchor="page2"><a href="#page2">基本信息</a></li>
+		<li data-menuanchor="page3"><a href="#page3">项目介绍</a></li>
+		<li data-menuanchor="page4"><a href="#page4">前端详解</a></li>
+		<li data-menuanchor="page5"><a href="#page5">三剑客</a></li>
+		<li data-menuanchor="page6"><a href="#page6">经历历程</a></li>
+	</ul>
+</div>
+<div id="dowebok">
+ <div class="section section1">
+	<!-- 视频插件 -->
+	  <div id="container">
+    <video id="background_video" loop muted></video>
+    <div id="video_cover"></div>
+    <div id="overlay"></div>
+	
+  </div>
+  <script src="video_js/bideo.js"></script>
+  <script src="video_js/main.js"></script>
+	<!-- 视频插件 -->
+		<h3 style="font-size: 60px;">前端工程师&nbsp;&nbsp;<span>简历<br><br></span></h3>
+		<p><small style="opacity: 0.3">爱技术爱生活</small></p>
+		<p class="jsh">工程师：何晨苑</p>
+		<p class="jsh jsh1">2018.6</p>
+		<img class="section1_img" src="images/zk.png">
+	</div>
+
+	<div class="section section2">
+		<div class="sec">
+		<div class="imga">
+			<div class="imga_a">
+			<div class="imgg imgg1"><img src="images/glass.png" alt="" style="width:169px ;height:130px ;"><p>基本信息</p></div>
+				<div class="imgb imga_left_top"><p>姓名：何晨苑</p><p>性别：男</p><p>爱好：比较广泛</p><p>年龄：21岁</p><p>出生年月：1997年4月15日</p></div>
+			</div>
+			<div class="imga_a">
+			<div class="imgg imgg2"><img src="images/hat.png" alt=""  style="width:200px ;height:130px ;"><p>毕业院校</p></div>
+				<div class="imgb imga_right_top"><p>学院：河南财政金融学院</p><p>简介：河南财政金融学院位于河南省郑州市，是经国家教育部批准设置、河南省人民政府举办的省属全日制普通本科院校。</p></div>
+			</div>
+			<div  class="imga_a">
+			<div class="imgg imgg3"><img src="images/book.png" alt=""  style="width:169px ;height:130px ;"><p>学历和专业</p></div>
+				<div class="imgb imga_left_bottom"><p>学历：大专</p><p>专业：信息工程系</p><p>辅导员：卢海丹</p><P>主修：html、php、java</P></div>
+			</div>
+			<div class="imga_a">
+			<div class="imgg imgg4"><img src="images/tel.png" alt=""  style="width:169px ;height:130px ;"><p>联系方式</p></div>
+				<div class="imgb imga_right_bottom"><p>TEL：1165161633</p><p>QQ:578241625</p><p>E-mail:578241625@qq.com</p><p>注：同性勿扰</p></div>
+			</div>
+		</div>
+				<div class="section2_jb"><p style="color:#C0C0C0;font-size: 60px;"><em>individual</em></p></div>
+	</div>
+	</div>
+	<div class="section section3">
+		<!-- 轮播 -->
+		<div class="banner" id="b04">
+		 <ul class="cont s--inactive"> 
+		  <!-- cont inner start -->
+		  <li class="cont__inner"> 
+		    <!-- el start -->
+		    <div class="el el_1">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">PC端—1</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">1</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="1">1</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_2">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">PC端—2</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">2</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="2">2</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_3">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">PC端—3</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">3</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="3">3</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_4">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">PC端—4</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">4</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="4">4</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_5">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">PC端—5</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">5</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="5">5</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		  </li>
+		  <!-- cont inner end --> 
+		    <li class="cont__inner"> 
+		    <!-- el start -->
+		    <div class="el el_6">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">FullPage-1</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">1</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="1">1</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_7">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">FullPage-2</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">2</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="2">2</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_8">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">FullPage-3</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">3</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="3">3</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_9">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">FullPage-4</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">4</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="4">4</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_10">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">FullPage-5</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">5</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="5">5</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		  </li>
+		 <li class="cont__inner"> 
+		    <!-- el start -->
+		    <div class="el el_1">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">移动端—1</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">1</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="1">1</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_2">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">移动端—2</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">2</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="2">2</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_13">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">移动端—3</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">3</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="3">3</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_14">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">移动端—4</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">4</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="4">4</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		    <!-- el start -->
+		    <div class="el el_15">
+		      <div class="el__overflow">
+		        <div class="el__inner">
+		          <div class="el__bg"></div>
+		          <div class="el__preview-cont">
+		            <h2 class="el__heading">移动端—5</h2>
+		          </div>
+		          <div class="el__content">
+		            <div class="el__text">Whatever</div>
+		            <div class="el__close-btn"></div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="el__index">
+		        <div class="el__index-back">5</div>
+		        <div class="el__index-front">
+		          <div class="el__index-overlay" data-index="5">5</div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- el end --> 
+		  </li>
+		  <!-- cont inner end --> 
+		</ul>
+		    <a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="images/arrowl.png" alt="prev" width="40" height="65"></a>
+		    <a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="images/arrowr.png" alt="next" width="40" height="65"></a>
+</div>
+<script src="js/index.js"></script>
+<script>
+	$(document).ready(function(e) {
+	    var unslider04 = $('#b04').unslider({
+			dots: true
+		}),
+		data04 = unslider04.data('unslider');
+		
+		$('.unslider-arrow04').click(function() {
+	        var fn = this.className.split(' ')[1];//prev next
+	        data04[fn]();
+	    });
+	});
+
+function imgReload(){
+	var imgHeight = 0;
+	var wtmp = $("body").width();
+	//遍历轮播图，将宽度设置为窗口宽度
+	$("#b06 ul li").each(function(){
+        $(this).css({width:wtmp + "px"});
+    });
+
+	//遍历轮播图，将图片宽度设置为窗口宽度
+	$(".sliderimg").each(function(){
+		$(this).css({width:wtmp + "px"});
+		imgHeight = $(this).height();
+	});
+}
+	$(window).resize(function(){imgReload();});
+	$(document).ready(function(e) {
+		imgReload();
+	    var unslider06 = $('#b06').unslider({
+			dots: true,
+			fluid: true
+		}),
+		data06 = unslider06.data('unslider');
+		$('.unslider-arrow06').click(function() {
+	        var fn = this.className.split(' ')[1];
+	        data06[fn]();
+	    });
+});
+
+</script>
+
+		<!-- 轮播 -->
+	</div>
+	<div class="section section4">
+		<div class="intro">
+			<div class="intro_k intro_a"><div class="phng"><img class="phn" src="images/2(1).png"></div><h1>PC端</h1><p>
+	                            熟练使用 Html5 Css3 JavaScript，能够合理完成web端或者移动端页面的编写和维护，<br>
+	                            思路清晰，结构完整，易于维护和持久化开发，能处理主流浏览器兼容问题。
+	                            熟练使用原生js, 了解js面向对象原理，闭包以及原型结构，能够合理利用面向对象以及模块化开发,并且能适当完成框架封装。熟练使用 jQuery，并能完成相关项目。
+	                           	熟悉animation fullpage jquery-ui template lazyload jQeasing masonry等实用插件的应用,轮播图，tab栏，瀑布流，延迟加载，全屏滚动等等常用功能的实现
+	                            掌握 <br>Ajax交互原理，根据后台接口能够合理完成前后台交互，数据的增删改查
+	                        </p>
+			</div>
+
+			<div class="intro_k intro_b"><div class="phng"><img class="phn" src="images/2(2).png"></div><h1>手机端</h1> <p>熟练使用zepto.js，Frozen ui，Amaze ui等移动框架进行移动页面的开发
+	                            <br>掌握 移动端编程，会基于流式布局以及 响应式布局 开发基于移动端的页面。
+	                            <br>熟练使用Bootstrap 框架以及轻量级框架 zepto 的使用。
+	                        </p>
+	        </div>
+
+	        <div class="intro_k intro_c"><div class="phng"><img class="phn" src="images/2(3).png"></div><h1>JavaScript脚本</h1><p>掌握 angularJS 框架原理，可以完成无需刷新的单页面应用
+	                            <br>了解Node.js 的工作原理会使用npm、bower环境
+	                        </p>
+	        </div>
+	    </div>  
+	      <!-- 电脑左上移动图片 -->
+	      <div class="com com_1"><img src="images/1(1).png" alt="" class="com_a"></div>
+	      <div class="com com_2"><img src="images/1(2).png" alt="" class="com_b"></div>
+			<div id="tagscloud" style="position: absolute; bottom: 50px; left: 120px;display: none;">
+				<a href="#" class="tagc1">js特效代码</a>
+				<a href="#" class="tagc2">网页小图标</a>
+				<a href="#" class="tagc5">jquery特效代码</a>
+				<a href="#" class="tagc2">js特效代码<a>
+			    <a href="#" class="tagc2" >网页小图标</a>
+				<a href="#" class="tagc1" >网站常用代码</a>
+				<a href="#" class="tagc2">js特效代码</a>
+				<a href="#" class="tagc5">jquery特效代码</a>
+				<a href="#" class="tagc2">网页小图标</a>
+				<a href="#" class="tagc2">代码笔记</a>
+				<a href="#" class="tagc5">js特效代码表</a>
+				<a href="#" class="tagc2">jquery特效代码表</a>
+				<a href="#" class="tagc1">js特效代码</a>
+				<a href="#" class="tagc2">网页小图标</a>
+				<a href="#" class="tagc5">jquery特效代码</a>
+				<a href="#" class="tagc2">js特效代码<a>
+				<a href="#" class="tagc2" >网页小图标</a>
+				<a href="#" class="tagc1" >网站常用代码</a>
+				<a href="#" class="tagc2">js特效代码</a>
+				<a href="#" class="tagc5">jquery特效代码</a>
+				<a href="#" class="tagc2">网页小图标</a>
+				<a href="#" class="tagc2">相册代码</a>
+				<a href="#" class="tagc5">js特效代码表</a>
+				<a href="#" class="tagc2">jquery特效代码表</a>
+			</div>	      
+	</div>
+	<!-- 第四屏 -->
+	<!-- 第五屏 -->
+		<div class="section section5">
+
+			<div class="qd" style=" position: absolute;border-radius: 50%; width: 300px; top: 130px; left: -20%; font-size: 40px;font-family: 楷体; background-color: rgba(0,0,0,0.5); ">前端IT介绍</div>
+			
+			
+<!--效果html开始-->
+<div class="demo">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<div class="box">
+					<div class="box-img">
+						<img src="images/h5.png" alt="">
+					</div>
+					<div class="box-content">
+						<h4 class="title">HTML5</h4>
+						<p class="description">html5是指万维网的核心语言、 标准通用标记语言下的一个应用 超文本标记语言（ HTML）的第五次重大修改（这是一项推荐标准、外语原文： W3C Recommendation、见本处 参考资料原文内容： [1] ）2014年10月29日， 万维网联盟宣布，经过接近8年的艰苦努力，该标准规范终于制定完成。
+</p>
+						<ul class="social-links">
+							<li><a href="#" class="fa fa-qq"></a></li>
+							<li><a href="#" class="fa fa-weibo"></a></li>
+							<li><a href="#" class="fa fa-weixin"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-sm-6">
+				<div class="box">
+					<div class="box-img">
+						<img src="images/js.png" alt="">
+					</div>
+					<div class="box-content">
+						<h4 class="title">JavaScript</h4>
+						<p class="description">Javascript[1]是一种由Netscape的LiveScript发展而来的原型化继承的面向对象的动态类型的区分大小写的客户端脚本语言，于是Netscape的浏览器Navigator加入了Javascript，提供了数据验证的基本功能，主要目的是为了解决服务器端语言，比如Perl，遗留的速度问题，为客户提供更流畅的浏览效果。当时服务端需要对数据进行验证，由于网络速度相当缓慢，只有28.8kbps，验证步骤浪费的时间太多。</p>
+						<ul class="social-links">
+							<li><a href="#" class="fa fa-qq"></a></li>
+							<li><a href="#" class="fa fa-weibo"></a></li>
+							<li><a href="#" class="fa fa-weixin"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-sm-6">
+				<div class="box">
+					<div class="box-img">
+						<img src="images/css3.png" alt="">
+					</div>
+					<div class="box-content">
+						<h4 class="title">CSS3</h4>
+						<p class="description">CSS3是CSS技术的升级版本，CSS3语言开发是朝着模块化发展。CSS即层叠样式表（Cascading StyleSheet），是在网页制作时采用的层叠样式表技术，可以有效地对页面的布局、字体、颜色、背景和其它效果实现更加精确的控制。CSS庞大而且比较复杂，CSS3把CSS分解为一些小的模块，更多新的模块也被加入进来。CSS3中的模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。</p>
+						<ul class="social-links">
+							<li><a href="#" class="fa fa-qq"></a></li>
+							<li><a href="#" class="fa fa-weibo"></a></li>
+							<li><a href="#" class="fa fa-weixin"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--效果html结束-->
+
+</div>
+	<!-- 第五屏 -->
+	<!-- 第六屏 -->
+	<div class="section section6">
+		<div style="background: rgba(0,0,0,0.3);width: 1920px; height: 1200px;">
+			<div class="lc" style="position: absolute; left: 44%; top: 100px; font-size: 50px; color: rgb(255,255,255);opacity: 0;">经历历程</div>
+			<div class="dialog d1 tio1"><span></span><h1 style="margin-top: 20px;">2009.6</h1><br><p>步入初中，时长三年的初中生活开始。<br>计算机开始普及，逐步学会Inter，<br>并开始很长一段时间的游戏生涯</p></div>
+			<div class="dialog d1 tio2"><span></span><h1 style="margin-top: 20px;">2015.6</h1><br><p>步入大学，时长三年的大学生活开始。<br>没有过多的犹豫，报选了软件技术专业<br>也开始了我对计算机领域深入的了解<br>它无穷尽的魅力也使我在这条路上越走越远</p></div>
+			<div class="dialog d2 tio3"><span></span><h1 style="margin-top: 20px;">2003.6</h1><br><p>步入小学，时长六年的小学生活开始。<br>朦胧的认知，无忧无虑的快乐童年。四年级开始<br>接触计算机，对计算机的好奇心越来越强</p></div>
+			<div class="dialog d2 tio4"><span></span><h1 style="margin-top: 20px;">2012.6</h1><br><p>步入高中，时长三年的高中生活开始。<br>随着年龄的增长，青年时期的好奇心越来越强<br>而游戏对自己的诱惑力越来越大，但是对于<br>计算机本身的兴趣也有极大的提高</p></div>
+			<div class="dialog d2 tio5"><span></span><h1 style="margin-top: 20px;">2018.6</h1><br><p>怀着兴奋又带些忐忑的心情<br>终于步入社会，又有哪些新奇事物<br>等我这呢？<br></p></div>
+			<img src="images/lc.png" alt="">
+		</div>
+	</div>
+	<!-- 第六屏 -->
+	</div>
+
+
+
+</div>
+
+</body>
+</html>
